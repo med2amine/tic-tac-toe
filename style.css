@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --back-color : #40513B ;
+    --board-color : #E5D9B6;
+    --button-color : #628141;
+    --text-color : #E67E22;
+    --primarypad : 100px;
+    --smallpad : 20px;
+    --biggap :  20px;
+    --smallgap : 10px;
+    --border : 10px;
+    --font-size-large : 2rem;
+    --square-size: 100px; 
+    --font-size-medium: 1.5rem;  
+    --font-size-square: 3rem;  
+    --border-radius: 8px; 
+    --hover-color: #7FA353;  
+    --disabled-color: #9CA986;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--back-color);
+    padding: var(--primarypad);
+    gap: var(--biggap);
+    align-items: center;
+    font-family: Arial,sans-serif;
+}
+
+header h1 {
+    font-size: var(--font-size-large);
+    color: var(--text-color);
+    font-weight: 900;
+}
+
+main{
+    padding: var(--smallpad);
+    display: flex;
+    flex-direction: column;
+    gap : var(--biggap);
+    align-items: center;
+}
+
+#turn{
+    color: var(--text-color);
+    font-size: var(--font-size-medium);
+}
+
+#result{
+    color: var(--text-color);
+    font-size: var(--font-size-medium);
+}
+
+.playerInput{
+    display: flex;
+    flex-direction: column;
+    gap: var(--smallgap);
+}
+
+input{
+    border-radius: var(--border-radius);
+    height: 25px;
+}
+
+.start-restart{
+    border-radius: var(--border);
+    height: 30px;
+    padding: 0 20px;
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.start-restart:hover{
+    background-color: var(--hover-color);
+    color: white;
+    cursor: pointer;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr) ;
+    gap: var(--smallgap);
+}
+
+.square{
+    height: 70px;
+    width: 70px;
+    font-size: var(--font-size-square);
+    background-color: var(--button-color);
+    border: none;
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.square:hover{
+    background-color: var(--hover-color);
+}
+
+.square:disabled{
+    background-color: var(--disabled-color);
+    cursor:not-allowed;
+}
